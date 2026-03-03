@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "name": "Neumorphism Dark",
+    "version": "1.0.0"
+  },
+  "colors": {
+    "background": "#1A1A1A",
+    "surface_light": "#222222",
+    "shadow_light": "#2E2E2E",
+    "shadow_dark": "#0A0A0A",
+    "orange": "#FF6B1A",
+    "orange_dim": "#CC5510",
+    "orange_glow": "rgba(255,107,26,0.25)",
+    "orange_subtle": "rgba(255,107,26,0.08)",
+    "green": "#8FE56D",
+    "green_dim": "#6BBF4D",
+    "green_glow": "rgba(143,229,109,0.20)",
+    "green_subtle": "rgba(143,229,109,0.08)",
+    "text_primary": "#F0F0F0",
+    "text_secondary": "#888888",
+    "text_muted": "#555555",
+    "error": "#FF3B3B",
+    "info": "#5BC0DE"
+  },
+  "shadows": {
+    "raised_sm": "3px 3px 8px #0A0A0A, -3px -3px 8px #2E2E2E",
+    "raised_md": "6px 6px 14px #0A0A0A, -6px -6px 14px #2E2E2E",
+    "raised_lg": "10px 10px 24px #0A0A0A, -10px -10px 24px #2E2E2E",
+    "inset": "inset 4px 4px 10px #0A0A0A, inset -4px -4px 10px #2E2E2E"
+  },
+  "radii": {
+    "sm": "12px",
+    "md": "18px",
+    "lg": "24px",
+    "xl": "32px",
+    "pill": "9999px"
+  },
+  "fonts": {
+    "display": "Syne",
+    "body": "DM Sans",
+    "mono": "JetBrains Mono"
+  }
+}

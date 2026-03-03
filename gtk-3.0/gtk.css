@@ -1,0 +1,66 @@
+@define-color window_bg_color #1A1A1A;
+@define-color view_bg_color #1A1A1A;
+@define-color card_bg_color #222222;
+@define-color headerbar_bg_color #1A1A1A;
+@define-color popover_bg_color #222222;
+@define-color accent_bg_color #FF6B1A;
+@define-color accent_fg_color #FFFFFF;
+@define-color accent_color #FF6B1A;
+@define-color destructive_color #FF3B3B;
+@define-color success_color #8FE56D;
+@define-color warning_color #FF6B1A;
+@define-color border_color #2E2E2E;
+@define-color text_color #F0F0F0;
+@define-color text_color_dim #888888;
+
+* {
+  border-radius: 18px;
+  -gtk-icon-style: regular;
+  font-family: "DM Sans";
+  font-size: 11pt;
+}
+
+window,
+dialog,
+.background {
+  background-color: @window_bg_color;
+  color: @text_color;
+}
+
+headerbar,
+.titlebar {
+  background-color: @headerbar_bg_color;
+  color: @text_color;
+  border: none;
+}
+
+button,
+entry,
+spinbutton,
+combobox,
+scale,
+menu,
+popover {
+  background-color: @window_bg_color;
+  color: @text_color;
+  border: 1px solid @border_color;
+}
+
+button:hover,
+button:focus,
+entry:focus {
+  border-color: @accent_color;
+}
+
+button:active,
+button:checked {
+  background-color: shade(@window_bg_color, 0.9);
+  border-color: @accent_color;
+}
+
+tooltip {
+  background-color: @window_bg_color;
+  color: @text_color;
+  border: 1px solid @border_color;
+  border-radius: 12px;
+}

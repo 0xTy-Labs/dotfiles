@@ -137,23 +137,22 @@ chmod +x ~/.config/waybar/scripts/*.sh
 # Create Rofi popup theme
 cat > ~/.config/rofi/waybar-popup.rasi << 'EOF'
 * {
-    bg-color:            rgba(20, 20, 30, 0.95);
-    bg-lighter:          rgba(30, 30, 45, 0.7);
-    fg-color:            #ffffff;
-    fg-dim:              #b0b0b0;
-    accent:              #00ff99;
-    accent-dim:          rgba(0, 255, 153, 0.3);
+    bg-color:            #1A1A1A;
+    fg-color:            #F0F0F0;
+    fg-dim:              #888888;
+    accent:              #FF6B1A;
+    accent-dim:          rgba(255, 107, 26, 0.2);
+    border-muted:        #2E2E2E;
     
     background-color:    transparent;
     text-color:          @fg-color;
-    border-color:        rgba(0, 255, 153, 0.3);
+    border-color:        @border-muted;
 }
 
 window {
     background-color:    @bg-color;
-    border:              2px solid;
-    border-color:        @border-color;
-    border-radius:       12px;
+    border:              0;
+    border-radius:       24px;
     padding:             16px;
     width:               300px;
 }
@@ -167,16 +166,16 @@ mainbox {
 inputbar {
     spacing:             8px;
     padding:             10px 12px;
-    border-radius:       8px;
-    background-color:    @bg-lighter;
-    border:              1px solid;
-    border-color:        @accent-dim;
+    border-radius:       18px;
+    background-color:    @bg-color;
+    border:              0;
     children:            [ prompt ];
 }
 
 prompt {
     text-color:          @accent;
     background-color:    transparent;
+    font:                "Syne 700 12";
 }
 
 listview {
@@ -190,21 +189,23 @@ listview {
 
 element {
     padding:             8px 10px;
-    border-radius:       6px;
+    border-radius:       18px;
     background-color:    transparent;
-    text-color:          @fg-color;
-    border:              1px solid transparent;
+    text-color:          @fg-dim;
+    border:              0;
 }
 
 element selected.normal {
-    background-color:    @accent-dim;
-    text-color:          @accent;
+    background-color:    @bg-color;
+    text-color:          @fg-color;
+    border:              2px solid;
     border-color:        @accent;
 }
 
 element-text {
     background-color:    transparent;
     text-color:          inherit;
+    font:                "DM Sans 400 12";
 }
 EOF
 

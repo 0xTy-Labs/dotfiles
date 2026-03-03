@@ -1,2 +1,2 @@
 # dotfiles
-config files for hyperland, waybar , hyprpaper , etc
+config files for hyprland, waybar , hyprpaper , etc
