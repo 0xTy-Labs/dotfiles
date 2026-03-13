@@ -17,7 +17,7 @@
 ## Install
 
 ```bash
-curl -fsSL https://github.com/0xTy-Labs/dotfiles/Dotfiles/install.sh | bash
+curl -fsSL https://github.com/0xTy-Labs/dotfiles/Desktop/install.sh | bash
 ```
 
 Then add **one line** to `~/.config/hypr/hyprland.conf`:
