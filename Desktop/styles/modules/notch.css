@@ -1,0 +1,263 @@
+/* axdots — modules/notch.css */
+
+/* ── Notch window ────────────────────────────────────────────────────────── */
+
+.notch-window {
+  background-color: transparent;
+}
+
+.notch-pill {
+  min-width: 240px;
+  min-height: 32px;
+  padding: 4px 12px;
+  transition: min-width  300ms cubic-bezier(0.16, 1, 0.3, 1),
+              min-height 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Collapsed media strip ────────────────────────────────────────────────── */
+
+.notch-media-pill {
+  min-height: 24px;
+}
+
+.media-strip {
+  min-height: 24px;
+}
+
+.media-player-icon {
+  font-size: 14px;
+}
+
+.media-title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.media-artist {
+  font-size: 10px;
+  color: @text_muted;
+  line-height: 1.2;
+}
+
+.media-playpause {
+  min-width: 24px;
+  min-height: 24px;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.notch-idle {
+  opacity: 0.5;
+}
+
+.notch-chevron {
+  font-size: 10px;
+  opacity: 0.5;
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.notch-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* ── Expanded panel ───────────────────────────────────────────────────────── */
+
+.notch-expanded {
+  padding: 8px 12px 12px;
+  min-width: 360px;
+}
+
+/* ── Full media controls ─────────────────────────────────────────────────── */
+
+.media-controls {
+  padding: 0 4px;
+}
+
+.album-art-container {
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.album-art {
+  border-radius: 8px;
+  min-width: 56px;
+  min-height: 56px;
+}
+
+.album-art-placeholder {
+  font-size: 32px;
+  color: @text_muted;
+}
+
+.media-progress {
+  min-height: 4px;
+  margin: 0 4px;
+}
+
+.media-progress trough {
+  background-color: @glass_border;
+  border-radius: 2px;
+  min-height: 4px;
+}
+
+.media-progress highlight {
+  background-color: @primary;
+  border-radius: 2px;
+}
+
+.media-progress slider {
+  min-width: 10px;
+  min-height: 10px;
+  border-radius: 50%;
+  background-color: @primary;
+  transition: transform 80ms ease;
+}
+
+.media-progress slider:hover {
+  transform: scale(1.3);
+}
+
+.transport-controls {
+  spacing: 8px;
+}
+
+.transport-btn {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.transport-btn label { font-size: 16px; }
+
+.transport-play {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 12px;
+  background-color: @accent_soft;
+  border: 1px solid @glass_border;
+  padding: 8px;
+}
+
+.transport-play:hover {
+  background-color: alpha(@primary, 0.25);
+}
+
+.transport-btn.active label { color: @primary; }
+
+/* ── Quick toggles ────────────────────────────────────────────────────────── */
+
+.quick-toggles {
+  spacing: 8px;
+}
+
+.toggle-btn {
+  min-width: 52px;
+  min-height: 52px;
+  border-radius: 12px;
+  border: 1px solid @glass_border;
+  background-color: @glass_bg;
+  transition: background-color 120ms ease,
+              border-color 120ms ease;
+}
+
+.toggle-btn label {
+  color: @text_muted;
+  transition: color 120ms ease;
+}
+
+.toggle-btn:hover {
+  background-color: @glass_hover;
+}
+
+.toggle-btn.active {
+  background-color: @accent_soft;
+  border-color: @primary;
+}
+
+.toggle-btn.active label {
+  color: @primary;
+}
+
+/* ── Sliders ─────────────────────────────────────────────────────────────── */
+
+.sliders-row {
+  padding: 0 4px;
+}
+
+.slider-row {
+  spacing: 8px;
+}
+
+.slider-icon { font-size: 15px; }
+.slider-val  { min-width: 34px; text-align: right; }
+
+.control-slider {
+  min-height: 6px;
+}
+
+.control-slider trough {
+  background-color: @glass_border;
+  border-radius: 3px;
+  min-height: 6px;
+}
+
+.volume-slider highlight     { background-color: @primary; border-radius: 3px; }
+.brightness-slider highlight { background-color: @tertiary; border-radius: 3px; }
+
+.control-slider slider {
+  min-width: 14px;
+  min-height: 14px;
+  border-radius: 50%;
+  background-color: @on_surface;
+  border: 2px solid @glass_border;
+  transition: transform 80ms ease;
+}
+
+.control-slider slider:hover { transform: scale(1.2); }
+
+/* Collapse button */
+.notch-collapse-btn {
+  min-height: 20px;
+  border-radius: 6px;
+  padding: 2px 12px;
+  opacity: 0.5;
+}
+.notch-collapse-btn:hover { opacity: 1; }
+
+/* ── OSD ─────────────────────────────────────────────────────────────────── */
+
+.osd-window {
+  background-color: transparent;
+}
+
+.osd-pill {
+  padding: 10px 16px;
+  min-height: 40px;
+  border-radius: 999px;
+  spacing: 10px;
+}
+
+.osd-icon { font-size: 16px; }
+
+.osd-bar {
+  min-height: 4px;
+  border-radius: 2px;
+}
+
+.osd-bar block {
+  background-color: @primary;
+  border-radius: 2px;
+  min-height: 4px;
+}
+
+.osd-bar block.empty { background-color: @glass_border; }
+
+.osd-pct {
+  min-width: 34px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

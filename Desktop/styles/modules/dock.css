@@ -1,0 +1,118 @@
+/* axdots — modules/dock.css */
+
+.dock-window {
+  background-color: transparent;
+}
+
+.dock {
+  padding: 8px 12px 10px;
+  border-radius: 20px;
+  spacing: 4px;
+  margin-bottom: 8px;
+}
+
+/* ── Dock items ───────────────────────────────────────────────────────────── */
+
+.dock-item-container {
+  spacing: 3px;
+}
+
+.dock-item {
+  border-radius: 12px;
+  transition: background-color 80ms ease;
+}
+
+.dock-item:hover,
+.dock-item.hovered {
+  background-color: @glass_hover;
+}
+
+.dock-icon-wrap {
+  border-radius: 12px;
+  padding: 4px;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 150ms ease;
+}
+
+/* Magnify on hover */
+.dock-item.hovered .dock-icon-wrap {
+  transform: scale(1.25) translateY(-4px);
+}
+
+/* Neighbor magnification handled by sibling selectors */
+.dock-item.hovered + .dock-item-container .dock-icon-wrap,
+.dock-item-container:has(+ .dock-item.hovered) .dock-icon-wrap {
+  transform: scale(1.12) translateY(-2px);
+}
+
+.dock-icon {
+  /* icon size set in code via pixelSize */
+}
+
+.dock-icon-fallback {
+  font-size: 36px;
+  color: @text_muted;
+}
+
+/* Active app ring */
+.dock-icon-wrap.running {
+  border: 1.5px solid @glass_border;
+}
+
+/* ── Running dots ─────────────────────────────────────────────────────────── */
+
+.dock-dots {
+  spacing: 3px;
+  min-height: 4px;
+}
+
+.dock-dot {
+  min-width: 4px;
+  min-height: 4px;
+  border-radius: 50%;
+  background-color: @primary;
+  opacity: 0.8;
+}
+
+/* ── Separator inside dock ────────────────────────────────────────────────── */
+
+.dock-separator {
+  min-width: 1px;
+  min-height: 32px;
+  background-color: @glass_border;
+  margin: 8px 4px;
+}
+
+/* ── Context menu ─────────────────────────────────────────────────────────── */
+
+.dock-menu-popover {
+  background-color: @bg_solid;
+  border: 1px solid @glass_border;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.dock-menu-header {
+  font-weight: 600;
+  font-size: 12px;
+  color: @text;
+  padding: 4px 8px;
+}
+
+.dock-menu-item {
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: @text;
+  background-color: transparent;
+  min-width: 160px;
+  transition: background-color 80ms ease;
+}
+
+.dock-menu-item:hover {
+  background-color: @glass_hover;
+}
+
+.dock-menu-destructive {
+  color: @error;
+}

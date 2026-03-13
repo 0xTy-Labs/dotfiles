@@ -1,0 +1,177 @@
+/* axdots — base.css
+ * GTK4 CSS reset + typography + global rules.
+ * GTK4 CSS is a subset of CSS3 — no CSS variables natively,
+ * but we use @define-color tokens (GTK's variable system).
+ */
+
+/* ── Global reset ──────────────────────────────────────────────────────── */
+
+* {
+  all: unset;
+  box-sizing: border-box;
+  font-family: "Zed Sans", "Inter", "JetBrains Mono", sans-serif;
+  font-size: 13px;
+  color: @text;
+  -gtk-outline-radius: 0;
+}
+
+window {
+  background-color: transparent;
+}
+
+/* ── Typography scale ──────────────────────────────────────────────────── */
+
+.text-xs  { font-size: 10px; }
+.text-sm  { font-size: 11px; }
+.text-md  { font-size: 13px; }
+.text-lg  { font-size: 15px; }
+.text-xl  { font-size: 18px; }
+.text-2xl { font-size: 22px; }
+.text-3xl { font-size: 28px; }
+.text-4xl { font-size: 36px; }
+
+.font-mono  { font-family: "JetBrains Mono", "Fira Code", monospace; }
+.font-bold  { font-weight: 700; }
+.font-semi  { font-weight: 600; }
+.font-light { font-weight: 300; }
+
+.text-primary  { color: @primary; }
+.text-muted    { color: @text_muted; }
+.text-accent   { color: @accent; }
+.text-error    { color: @error; }
+
+/* ── Spacing helpers ───────────────────────────────────────────────────── */
+
+.p-1  { padding: 4px; }
+.p-2  { padding: 8px; }
+.p-3  { padding: 12px; }
+.p-4  { padding: 16px; }
+.p-6  { padding: 24px; }
+
+.px-2 { padding-left: 8px;  padding-right: 8px;  }
+.px-3 { padding-left: 12px; padding-right: 12px; }
+.px-4 { padding-left: 16px; padding-right: 16px; }
+.py-1 { padding-top: 4px;   padding-bottom: 4px;  }
+.py-2 { padding-top: 8px;   padding-bottom: 8px;  }
+
+.gap-1  { spacing: 4px; }
+.gap-2  { spacing: 8px; }
+.gap-3  { spacing: 12px; }
+.gap-4  { spacing: 16px; }
+
+/* ── Glass material classes ────────────────────────────────────────────── */
+
+/* The canonical glass panel — used by bar, notch, dock, etc.
+ * IMPORTANT: blur is handled by Hyprland layerrule, NOT here.
+ * background uses @glass_bg which is ~14% opacity dark fill.
+ */
+.glass {
+  background-color: @glass_bg;
+  border: 1px solid @glass_border;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.glass-sm {
+  background-color: @glass_bg;
+  border: 1px solid @glass_border;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.glass-lg {
+  background-color: @glass_bg;
+  border: 1px solid @glass_border;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* Slightly higher opacity for panels that need readability */
+.glass-solid {
+  background-color: @bg_solid;
+  border: 1px solid @glass_border;
+  border-radius: 16px;
+}
+
+/* ── Interactive states ─────────────────────────────────────────────────── */
+
+button,
+.clickable {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 6px 8px;
+  transition: background-color 80ms ease,
+              transform 80ms ease;
+}
+
+button:hover,
+.clickable:hover {
+  background-color: @glass_hover;
+}
+
+button:active,
+.clickable:active {
+  background-color: @glass_active;
+}
+
+/* Pill button (used in bar status pills) */
+.pill {
+  background-color: @glass_bg;
+  border: 1px solid @glass_border;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.pill:hover {
+  background-color: @glass_hover;
+  border-color: @outline;
+}
+
+/* Icon button */
+.icon-btn {
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+/* ── Scrollbars ─────────────────────────────────────────────────────────── */
+
+scrollbar {
+  background-color: transparent;
+  min-width: 6px;
+}
+
+scrollbar slider {
+  background-color: @outline_var;
+  border-radius: 3px;
+  min-width: 6px;
+}
+
+scrollbar slider:hover {
+  background-color: @outline;
+}
+
+/* ── Tooltips ─────────────────────────────────────────────────────────────── */
+
+tooltip {
+  background-color: @surface_var;
+  border: 1px solid @glass_border;
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: @text;
+  font-size: 11px;
+}
+
+/* ── Separators ───────────────────────────────────────────────────────────── */
+
+.separator {
+  background-color: @glass_border;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+.separator-v {
+  background-color: @glass_border;
+  min-width: 1px;
+}

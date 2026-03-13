@@ -1,0 +1,179 @@
+/* axdots — animations.css
+ * Keyframe definitions + transition utility classes.
+ *
+ * Philosophy:
+ *   - ALL animations are CSS-only. No JS animation loops.
+ *   - Spring easing approximated with cubic-bezier(0.16, 1, 0.3, 1)
+ *   - Durations: 80ms micro | 150ms widget | 220ms panel | 350ms overlay
+ */
+
+/* ── Keyframes ──────────────────────────────────────────────────────────── */
+
+/* Slide down from above screen (bar, notch initial mount) */
+@keyframes slide-down {
+  from {
+    margin-top: -40px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+/* Slide up from below screen (dock) */
+@keyframes slide-up {
+  from {
+    margin-bottom: -80px;
+    opacity: 0;
+  }
+  to {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+}
+
+/* Slide in from right (notification center panel) */
+@keyframes slide-in-right {
+  from {
+    margin-right: -380px;
+    opacity: 0;
+  }
+  to {
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
+/* Scale + fade in (popups, power menu, overlays) */
+@keyframes scale-in {
+  from {
+    transform: scale(0.93);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Scale + fade out */
+@keyframes scale-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.93);
+    opacity: 0;
+  }
+}
+
+/* Fade in (notifications, tooltips) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Notification toast slide in from right */
+@keyframes toast-in {
+  from {
+    margin-right: -400px;
+    opacity: 0;
+  }
+  to {
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
+/* Notification toast fade out */
+@keyframes toast-out {
+  from { opacity: 1; }
+  to   { opacity: 0; margin-top: -80px; }
+}
+
+/* OSD bar fill */
+@keyframes osd-fill {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
+/* Workspace dot pill expand */
+@keyframes dot-expand {
+  from { min-width: 6px; }
+  to   { min-width: 20px; }
+}
+
+/* Subtle pulse for active media (notch) */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+/* Spinner (used in weather widget loading state) */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Animation utility classes ──────────────────────────────────────────── */
+
+/* Standard spring easing — use for ALL panel open/close */
+.spring        { transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1); }
+.spring-fast   { transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1); }
+.spring-slow   { transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* Micro-interaction — hover, press */
+.micro         { transition: all 80ms ease-out; }
+
+/* Applied by code when widget enters/exits */
+.anim-slide-down  { animation: slide-down  220ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-slide-up    { animation: slide-up    220ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-scale-in    { animation: scale-in    220ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-scale-out   { animation: scale-out   150ms ease-in both; }
+.anim-fade-in     { animation: fade-in     150ms ease both; }
+.anim-toast-in    { animation: toast-in    300ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-toast-out   { animation: toast-out   200ms ease-in both; }
+
+/* Staggered entry (used for notification stacking) */
+.anim-stagger-1 { animation-delay: 0ms; }
+.anim-stagger-2 { animation-delay: 40ms; }
+.anim-stagger-3 { animation-delay: 80ms; }
+.anim-stagger-4 { animation-delay: 120ms; }
+
+/* ── Notch expansion ────────────────────────────────────────────────────── */
+
+/* The notch transitions its own size — GTK does this with:
+ * - min-width / min-height transitions on the revealer
+ */
+.notch-pill {
+  transition: min-width  300ms cubic-bezier(0.16, 1, 0.3, 1),
+              min-height 300ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity    150ms ease;
+}
+
+/* ── Spinner ────────────────────────────────────────────────────────────── */
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+/* ── Shimmer (skeleton loading) ─────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    @glass_bg 25%,
+    @glass_hover 50%,
+    @glass_bg 75%
+  );
+  background-size: 200%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 4px;
+}

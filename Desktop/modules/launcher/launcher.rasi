@@ -1,0 +1,165 @@
+/**
+ * axdots — launcher.rasi
+ * Glass-morphism Rofi theme matching the axdots aesthetic.
+ *
+ * Usage:
+ *   rofi -show drun -theme ~/.config/axdots/modules/launcher/launcher.rasi
+ *   rofi -show run  -theme ~/.config/axdots/modules/launcher/launcher.rasi
+ *
+ * Color variables are overridden by the generated tokens file at runtime.
+ * See scripts/gen-rofi-colors.sh for the pipeline.
+ */
+
+/* ── Import generated colors ── */
+@import "~/.cache/axdots/rofi-colors.rasi"
+
+/* ── Global ─────────────────────────────────────────────────────────────── */
+
+* {
+    font:             "Zed Sans 13";
+    background-color: transparent;
+    text-color:       @text;
+    border:           0;
+    padding:          0;
+    margin:           0;
+}
+
+/* ── Window ─────────────────────────────────────────────────────────────── */
+
+window {
+    width:            720px;
+    background-color: @bg_solid;
+    border:           1px solid @glass_border;
+    border-radius:    20px;
+    padding:          0;
+    x-offset:         0;
+    y-offset:         -120px;       /* float above screen center */
+}
+
+/* ── Mainbox ─────────────────────────────────────────────────────────────── */
+
+mainbox {
+    orientation:      vertical;
+    children:         [ inputbar, message, listview ];
+    spacing:          0;
+    padding:          12px;
+}
+
+/* ── Input bar ───────────────────────────────────────────────────────────── */
+
+inputbar {
+    children:         [ prompt, entry ];
+    spacing:          8px;
+    padding:          12px 16px;
+    background-color: @glass_bg;
+    border:           1px solid @glass_border;
+    border-radius:    12px;
+    margin:           0 0 8px 0;
+}
+
+prompt {
+    text-color:       @primary;
+    font:             "Zed Sans Bold 13";
+    padding:          4px 0;
+}
+
+entry {
+    text-color:       @text;
+    placeholder:      "Search apps, run commands…";
+    placeholder-color:@text_muted;
+    padding:          4px 0;
+    cursor:           text;
+}
+
+/* ── List view ───────────────────────────────────────────────────────────── */
+
+listview {
+    lines:            8;
+    columns:          1;
+    spacing:          2px;
+    padding:          4px 0;
+    scrollbar:        true;
+    scroll-method:    0;
+    dynamic:          true;
+    layout:           vertical;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+
+scrollbar {
+    width:            4px;
+    background-color: transparent;
+    handle-color:     @glass_border;
+    handle-width:     4px;
+    border-radius:    2px;
+    margin:           2px;
+}
+
+/* ── Element ─────────────────────────────────────────────────────────────── */
+
+element {
+    children:         [ element-icon, element-text ];
+    orientation:      horizontal;
+    spacing:          12px;
+    padding:          8px 12px;
+    border-radius:    10px;
+    background-color: transparent;
+    cursor:           pointer;
+    transition:       background-color 80ms ease;
+}
+
+element selected {
+    background-color: @glass_hover;
+    border:           1px solid @glass_border;
+}
+
+element alternate {
+    background-color: transparent;
+}
+
+element-icon {
+    size:             24px;
+    vertical-align:   0.5;
+}
+
+element-text {
+    vertical-align:   0.5;
+    text-color:       @text;
+}
+
+element selected .element-text {
+    text-color: @on_surface;
+    font:       "Zed Sans SemiBold 13";
+}
+
+/* ── Message (shown for empty results) ──────────────────────────────────── */
+
+message {
+    padding:          8px 12px;
+}
+
+textbox {
+    text-color: @text_muted;
+    font:       "Zed Sans 12";
+}
+
+/* ── Mode switcher (for -modi) ───────────────────────────────────────────── */
+
+mode-switcher {
+    spacing:          4px;
+    padding:          8px 0 0;
+}
+
+button {
+    padding:          6px 12px;
+    border-radius:    8px;
+    text-color:       @text_muted;
+    font:             "Zed Sans 12";
+    background-color: transparent;
+}
+
+button selected {
+    background-color: @accent_soft;
+    text-color:       @primary;
+    border:           1px solid @glass_border;
+}

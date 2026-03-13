@@ -1,0 +1,39 @@
+/* axdots — styles/tokens.css
+ * INITIAL FALLBACK — replaced by matugen on first wallpaper set.
+ * These dark tokens ensure the shell renders correctly before
+ * the first theme generation completes.
+ *
+ * DO NOT EDIT — this file is auto-overwritten by scripts/theme.sh
+ * If you need permanent colour overrides, use styles/overrides.css
+ */
+
+@define-color bg            #0d1117;
+@define-color bg_blur       rgba(13, 17, 23, 0.15);
+@define-color bg_solid      rgba(13, 17, 23, 0.92);
+@define-color surface       #161b22;
+@define-color surface_blur  rgba(22, 27, 34, 0.12);
+@define-color surface_var   #21262d;
+@define-color primary       #58a6ff;
+@define-color on_primary    #0d1b30;
+@define-color primary_cont  #1d3557;
+@define-color secondary     #7ee787;
+@define-color tertiary      #e3b341;
+@define-color on_surface    #e6edf3;
+@define-color on_surf_var   #8b949e;
+@define-color text          #c9d1d9;
+@define-color text_muted    #8b949e;
+@define-color outline       #30363d;
+@define-color outline_var   #21262d;
+@define-color error         #f97583;
+
+/* Semantic glass tokens */
+@define-color glass_bg      rgba(13, 17, 23, 0.14);
+@define-color glass_border  rgba(48, 54, 61, 0.30);
+@define-color glass_hover   rgba(230, 237, 243, 0.06);
+@define-color glass_active  rgba(230, 237, 243, 0.03);
+@define-color accent        #58a6ff;
+@define-color accent_soft   rgba(88, 166, 255, 0.15);
+
+@define-color notif_low     #7ee787;
+@define-color notif_normal  #58a6ff;
+@define-color notif_critical #f97583;

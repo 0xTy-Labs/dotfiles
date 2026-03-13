@@ -1,0 +1,27 @@
+/* axdots — main.css
+ * Root stylesheet. Imports are in load order.
+ * This file is passed to App.start({ css }) and hot-reloaded via App.resetCss().
+ */
+
+/* 1. Generated color tokens (matugen output — auto-overwritten on theme change) */
+@import "tokens.css";
+
+/* 2. Base reset + typography */
+@import "base.css";
+
+/* 3. Reusable component classes */
+@import "components.css";
+
+/* 4. Keyframe animations */
+@import "animations.css";
+
+/* 5. Module styles */
+@import "modules/bar.css";
+@import "modules/notch.css";
+@import "modules/dock.css";
+@import "modules/notifications.css";
+@import "modules/widgets.css";
+@import "modules/osd.css";
+@import "modules/powermenu.css";
+@import "modules/corners.css";
+@import "modules/sysmon-weather.css";

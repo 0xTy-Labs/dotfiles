@@ -1,0 +1,133 @@
+/* axdots — modules/widgets.css */
+
+/* ── Power Menu ───────────────────────────────────────────────────────────── */
+
+.power-menu-window {
+  background-color: transparent;
+}
+
+.power-menu-backdrop {
+  background-color: rgba(0,0,0,0.55);
+}
+
+.power-menu-card {
+  padding: 40px 48px;
+  min-width: 500px;
+  border-radius: 28px;
+}
+
+.power-action-btn {
+  min-width: 80px;
+  min-height: 88px;
+  border-radius: 16px;
+  border: 1px solid @glass_border;
+  background-color: @glass_bg;
+  padding: 16px 12px;
+  transition: background-color 120ms ease,
+              border-color 120ms ease,
+              transform 120ms ease;
+}
+
+.power-action-btn:hover {
+  background-color: @glass_hover;
+  transform: translateY(-3px) scale(1.03);
+}
+
+.power-action-btn:active {
+  transform: scale(0.97);
+}
+
+.power-action-btn.danger:hover {
+  background-color: alpha(@error, 0.12);
+  border-color: alpha(@error, 0.4);
+}
+
+.power-action-icon {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.power-action-label {
+  font-size: 10px;
+  color: @text_muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── OSD ─────────────────────────────────────────────────────────────────── */
+
+.osd-window    { background-color: transparent; }
+
+/* ── Calendar ─────────────────────────────────────────────────────────────── */
+
+.calendar-window { background-color: transparent; }
+
+.calendar-card {
+  min-width: 264px;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.calendar-header {
+  spacing: 8px;
+}
+
+.calendar-month-label {
+  hexpand: true;
+  halign: center;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.calendar-month-label:hover {
+  background-color: @glass_hover;
+}
+
+.calendar-nav {
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.calendar-nav label { font-size: 16px; }
+
+.calendar-dow-row {
+  spacing: 0;
+}
+
+.calendar-dow {
+  min-width: 34px;
+  min-height: 24px;
+  font-size: 10px;
+  color: @text_muted;
+  font-weight: 600;
+  /* text-align: center handled by halign in GJS */
+}
+
+.calendar-grid {
+  spacing: 2px;
+}
+
+.calendar-week {
+  spacing: 0;
+}
+
+.calendar-day {
+  min-width: 34px;
+  min-height: 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: @text;
+  transition: background-color 80ms ease;
+}
+
+.calendar-day.empty {
+  opacity: 0;
+}
+
+.calendar-day.today {
+  background-color: @accent_soft;
+  color: @primary;
+  font-weight: 700;
+  border: 1px solid @glass_border;
+}

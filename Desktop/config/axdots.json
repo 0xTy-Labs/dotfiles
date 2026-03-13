@@ -1,0 +1,62 @@
+{
+  "bar": {
+    "enabled": true,
+    "height": 32,
+    "margin": 8,
+    "position": "top",
+    "modules": {
+      "left":   ["workspaces", "windowTitle"],
+      "center": ["notch", "clock"],
+      "right":  ["tray", "statusPills", "power"]
+    }
+  },
+  "notch": {
+    "enabled": true,
+    "showMedia": true,
+    "showToggles": true,
+    "expandOnHover": false
+  },
+  "dock": {
+    "enabled": true,
+    "iconSize": 48,
+    "autoHide": true,
+    "autoHideDelay": 1500,
+    "pinnedApps": [
+      "firefox.desktop",
+      "org.gnome.Nautilus.desktop",
+      "kitty.desktop",
+      "code.desktop",
+      "discord.desktop",
+      "spotify.desktop"
+    ]
+  },
+  "notifications": {
+    "enabled": true,
+    "position": "top-right",
+    "maxToasts": 4,
+    "timeout": 5000
+  },
+  "corners": {
+    "enabled": true,
+    "radius": 16
+  },
+  "widgets": {
+    "calendar": true,
+    "weather": false,
+    "sysmonitor": true
+  },
+  "theme": {
+    "matugenScheme": "tonal-spot",
+    "wallpaper": "~/Pictures/wallpaper.jpg",
+    "blur": 8
+  },
+  "keybinds": {
+    "launcher":      "SUPER SPACE",
+    "notch":         "SUPER N",
+    "notifications": "SUPER SHIFT N",
+    "powerMenu":     "SUPER SHIFT P",
+    "colorPicker":   "SUPER SHIFT C",
+    "screenshot":    "SUPER SHIFT S",
+    "screenRecord":  "SUPER SHIFT R"
+  }
+}

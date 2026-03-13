@@ -1,0 +1,59 @@
+/* axdots — modules/powermenu.css */
+
+.power-menu-window {
+  background-color: transparent;
+}
+
+.power-menu-backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.power-menu-card {
+  padding: 40px 48px;
+  min-width: 480px;
+  border-radius: 28px;
+  spacing: 24px;
+}
+
+.power-action-btn {
+  min-width: 76px;
+  min-height: 84px;
+  border-radius: 16px;
+  border: 1px solid @glass_border;
+  background-color: @glass_bg;
+  padding: 16px 10px;
+  transition: background-color 120ms ease,
+              border-color     120ms ease,
+              transform        150ms cubic-bezier(0.16,1,0.3,1);
+}
+
+.power-action-btn:hover {
+  background-color: @glass_hover;
+  transform: translateY(-3px) scale(1.04);
+  border-color: @outline;
+}
+
+.power-action-btn:active {
+  transform: scale(0.96);
+}
+
+.power-action-btn.danger:hover {
+  background-color: alpha(@error, 0.12);
+  border-color: alpha(@error, 0.45);
+}
+
+.power-action-btn.danger:hover label {
+  color: @error;
+}
+
+.power-action-icon {
+  font-size: 30px;
+}
+
+.power-action-label {
+  font-size: 10px;
+  color: @text_muted;
+  letter-spacing: 0.06em;
+}

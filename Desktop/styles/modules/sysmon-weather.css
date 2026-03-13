@@ -1,0 +1,80 @@
+/* axdots — modules/sysmon-weather.css
+ * Styles for SysMonitor and Weather widgets.
+ */
+
+/* ── Shared widget card ───────────────────────────────────────────────────── */
+
+.sysmon-window,
+.weather-window {
+  background-color: transparent;
+}
+
+.sysmon-card,
+.weather-card {
+  padding: 16px;
+  border-radius: 20px;
+  min-width: 240px;
+}
+
+/* ── SysMonitor ───────────────────────────────────────────────────────────── */
+
+.sysmon-bar {
+  min-height: 4px;
+  border-radius: 2px;
+}
+
+.sysmon-bar trough {
+  background-color: @glass_border;
+  border-radius: 2px;
+  min-height: 4px;
+}
+
+/* Color by load level */
+.sysmon-bar-low  block.filled,
+.sysmon-bar-low  block.high   { background-color: @secondary; border-radius: 2px; min-height: 4px; border: none; }
+.sysmon-bar-med  block.filled,
+.sysmon-bar-med  block.high   { background-color: @tertiary;  border-radius: 2px; min-height: 4px; border: none; }
+.sysmon-bar-high block.filled,
+.sysmon-bar-high block.high   { background-color: @error;     border-radius: 2px; min-height: 4px; border: none; }
+
+.sysmon-bar block.empty { background-color: @glass_border; border-radius: 2px; min-height: 4px; border: none; }
+
+.sysmon-val-low  { color: @secondary; }
+.sysmon-val-med  { color: @tertiary; }
+.sysmon-val-high { color: @error; }
+
+/* ── Weather ─────────────────────────────────────────────────────────────── */
+
+.weather-main-icon {
+  font-size: 52px;
+  line-height: 1;
+}
+
+.weather-temp {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.weather-detail {
+  min-width: 60px;
+  padding: 6px 4px;
+  border-radius: 8px;
+  spacing: 3px;
+  transition: background-color 80ms ease;
+}
+
+.weather-detail:hover {
+  background-color: @glass_hover;
+}
+
+.weather-detail label:first-child {
+  font-size: 14px;
+}
+
+/* Forecast column */
+.forecast-day {
+  spacing: 4px;
+  padding: 4px 2px;
+}

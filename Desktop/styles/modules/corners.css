@@ -1,0 +1,26 @@
+/* axdots — modules/corners.css */
+
+.corner-window {
+  background-color: transparent;
+}
+
+/* Each corner is a box that uses border-radius to create the cutout shape.
+ * The background must match the screen edge color — typically transparent
+ * when the compositor handles rounding, or black on flat monitors.
+ */
+.corner-cutout {
+  background-color: black;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.corner-cutout-top-left     { border-top-left-radius: 0; border-top-right-radius: 999px; border-bottom-left-radius: 999px; border-bottom-right-radius: 999px; }
+.corner-cutout-top-right    { border-top-left-radius: 999px; border-top-right-radius: 0; border-bottom-left-radius: 999px; border-bottom-right-radius: 999px; }
+.corner-cutout-bottom-left  { border-top-left-radius: 999px; border-top-right-radius: 999px; border-bottom-left-radius: 0; border-bottom-right-radius: 999px; }
+.corner-cutout-bottom-right { border-top-left-radius: 999px; border-top-right-radius: 999px; border-bottom-left-radius: 999px; border-bottom-right-radius: 0; }
+
+/* ── OSD (fallback styles if not in notch.css) ─────────────────────────── */
+.osd-window { background-color: transparent; }
+
+/* ── Power menu ───────────────────────────────────────────────────────────── */
+.power-menu-window { background-color: transparent; }
