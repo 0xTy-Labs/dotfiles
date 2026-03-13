@@ -10,14 +10,14 @@
 
 ## Screenshots
 
-> *(Add screenshots after first run)*
+> *(---)*
 
 ---
 
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<user>/axdots/main/install.sh | bash
+curl -fsSL https://github.com/0xTy-Labs/dotfiles/Dotfiles/install.sh | bash
 ```
 
 Then add **one line** to `~/.config/hypr/hyprland.conf`:
