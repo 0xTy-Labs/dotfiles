@@ -5,7 +5,7 @@
 # Supports: Arch Linux (pacman/AUR), Fedora (dnf), Debian/Ubuntu (apt)
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/<user>/axdots/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/0xTy-Labs/dotfiles/refs/heads/backbone/Desktop/install.sh | bash
 #   Or locally:
 #   bash install.sh
 # ─────────────────────────────────────────────────────────────────────────────
